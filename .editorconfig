@@ -1,0 +1,19 @@
+# # Windows files 
+# [*.bat]
+# end_of_line = crlf 
+root = true
+[*]
+charset = utf-8
+# ⽤⼀个整数定义的列数来设置缩进的宽度，如果indent_style为tab，则此属性默认为 
+tab_width
+indent_size = 2
+# 设置缩进⻛格(tab是硬缩进，space为软缩进) 
+indent_style = tab
+# 设为true表示使⽂件以⼀个空⽩⾏结尾 
+insert_final_newline = true
+# 设为true表示会去除换⾏⾏⾸的任意空⽩字符。 
+trim_trailing_whitespace = true
+# 设置换⾏符，值为lf、cr和crlf 
+end_of_line = lf
+[*.md]
+trim_trailing_whitespace = false
