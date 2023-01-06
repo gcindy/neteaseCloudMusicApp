@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <defs>
+        <path d="M15.2631579,9.01315789 L4.73684211,9.01315789 C4.19182426,9.01315789 3.75,9.45498215 3.75,10 C3.75,10.5450178 4.19182426,10.9868421 4.73684211,10.9868421 L15.2631579,10.9868421 C15.8081757,10.9868421 16.25,10.5450178 16.25,10 C16.25,9.45498215 15.8081757,9.01315789 15.2631579,9.01315789 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="公共组件" transform="translate(-160.000000, -360.000000)">
+            <g id="icon/删除" transform="translate(160.000000, 360.000000)">
+                <g id="编组-21">
+                    <circle id="椭圆形" fill="#D9D9D9" cx="10" cy="10" r="10"></circle>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="plus" fill="#666666" xlink:href="#path-1"></use>
+                </g>
+                <g id="图表icon/common/plus" transform="translate(3.750000, 3.750000)"></g>
+            </g>
+        </g>
+    </g>
+</svg>

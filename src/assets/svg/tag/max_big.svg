@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="16px" viewBox="0 0 34 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品对比-结果3只备份-2" transform="translate(-486.000000, -5449.000000)">
+            <g id="编组" transform="translate(486.000000, 5449.000000)">
+                <path d="M8,0 L26,0 C30.418278,-8.11624501e-16 34,3.581722 34,8 C34,12.418278 30.418278,16 26,16 L1,16 C0.44771525,16 6.76353751e-17,15.5522847 0,15 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" id="矩形" fill="#DD0000" opacity="0.0522879479"></path>
+                <text id="最好" font-family="PingFangSC-Medium, PingFang SC" font-size="11" font-weight="400" fill="#F91A1A">
+                    <tspan x="6" y="12">最多</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

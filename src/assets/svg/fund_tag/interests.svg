@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="16px" viewBox="0 0 38 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>切片</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品对比-结果3只" transform="translate(-507.000000, -138.000000)">
+            <g id="编组-3" transform="translate(448.000000, 90.000000)">
+                <g id="label/风险/深底色风险备份-7" transform="translate(59.000000, 48.000000)">
+                    <rect id="Rectangle-2-Copy" fill="#FFFFFF" x="0" y="0" width="38" height="16" rx="1"></rect>
+                    <rect id="Rectangle-2-Copy" fill="#4059CD" x="0" y="0" width="38" height="16" rx="1"></rect>
+                    <text id="标签类" font-family="PingFangSC-Regular, PingFang SC" font-size="10" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="4" y="12">权益类</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

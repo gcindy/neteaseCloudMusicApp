@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>分享</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.250980 0 0 0 0 0.349020 0 0 0 0 0.803922 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="新客专享" transform="translate(-990.000000, -693.000000)">
+            <g id="编组-6备份-8-+-编组-6备份-9-蒙版" transform="translate(24.000000, 92.000000)">
+                <g id="编组-4备份-7" transform="translate(0.000000, 563.000000)">
+                    <g id="分享" transform="translate(966.000000, 38.000000)" filter="url(#filter-1)">
+                        <g>
+                            <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="14" height="14"></rect>
+                            <path d="M5.00262721,13.7502594 L1.25629291,13.7502594 C0.704008159,13.7502594 0.256292909,13.3025441 0.256292909,12.7502594 L0.256292909,1.25312951 C0.256292909,0.700844756 0.704008159,0.253129506 1.25629291,0.253129506 L12.7471899,0.253129506 C13.2994746,0.253129506 13.7471899,0.700844756 13.7471899,1.25312951 L13.7471899,7.00338891 L13.7471899,7.00338891" id="路径-3备份-2" stroke="#4059CD" stroke-width="0.5" stroke-linecap="round" transform="translate(7.001741, 7.001694) scale(1, -1) translate(-7.001741, -7.001694) "></path>
+                            <path d="M4.33814765,10.5618194 C5.15427904,5.33653875 8.1733751,2.55618761 13.3954358,2.22076599" id="路径-7" stroke="#979797" stroke-width="0.5" stroke-linecap="round"></path>
+                            <polyline id="路径-10" stroke="#979797" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="10.2812682 0.45954406 13.7471899 2.13870003 11.2280308 4.98825276"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
