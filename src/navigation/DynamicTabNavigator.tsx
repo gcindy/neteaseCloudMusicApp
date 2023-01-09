@@ -3,9 +3,9 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-05 19:00:04
- * @LastEditTime: 2023-01-05 19:19:00
+ * @LastEditTime: 2023-01-06 19:22:12
  */
-import * as React from "react";
+
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
