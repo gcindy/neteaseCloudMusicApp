@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-05 19:00:04
- * @LastEditTime: 2023-01-06 19:22:12
+ * @LastEditTime: 2023-01-17 16:46:02
  */
 
 import "react-native-gesture-handler";
@@ -17,7 +17,7 @@ const Stack = createNativeStackNavigator();
 const DynamicTabNavigator = () => {
   return (
     <NavigationContainer ref={navigatorRef => Navigation.initNavihator(navigatorRef)}>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
         {registerAppList.map((_, index) => (
           <Stack.Screen key={index} name={_.path} component={_.component} />
         ))}

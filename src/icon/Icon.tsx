@@ -27,9 +27,7 @@ export const Icon: React.FC<IconProps> = props => {
     share: Share,
   };
 
-  // console.log("props==>type", props.type);
-
   const ArrowXmlStr = arrowType[props.type] as unknown as string;
 
-  return <SvgToXml xml={ArrowXmlStr} {...props} color="#ff5050" />;
+  return <SvgToXml xml={ArrowXmlStr} {...props} />;
 };

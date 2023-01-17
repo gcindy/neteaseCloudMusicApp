@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-05 19:12:43
- * @LastEditTime: 2023-01-06 19:21:55
+ * @LastEditTime: 2023-01-17 16:35:46
  */
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
