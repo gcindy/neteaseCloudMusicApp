@@ -6,8 +6,6 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "../../hooks";
 import { mineStyle } from "../../styles";
 
-let timer: any;
-
 const LoginScreen = () => {
   const { usersInstance } = useStore();
 
@@ -17,11 +15,6 @@ const LoginScreen = () => {
   const [second, setSecond] = useState(COUNTDOWN_SECONDS); // 当前秒数
   const [phone, setPhone] = useState<string>("13666683140");
   const [captcha, setCaptcha] = useState<string>("");
-
-  useEffect(() => {
-    clearInterval(timer);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     let timer: any;
