@@ -19,7 +19,7 @@ export const setStorage = async (key: string, value: any) => {
 export const getStorage = async (key: string) => {
   try {
     const storage = (await AsyncStorage.getItem(key)) as string;
-    return JSON.parse(storage);
+    return storage;
   } catch (err) {
     throw err;
   }

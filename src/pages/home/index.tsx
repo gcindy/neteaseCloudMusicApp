@@ -5,9 +5,12 @@
  * @Date: 2023-01-05 18:50:38
  * @LastEditTime: 2023-01-19 22:28:24
  */
-import React, { useEffect } from "react";
-import { View, Text } from "react-native";
+import React from "react";
+import { Text } from "react-native";
 import { observer } from "mobx-react-lite";
+import { Button } from "@ant-design/react-native";
+import { getStorage } from "@/utils/storage";
+import { SafeAreaView } from "react-native-safe-area-context";
 // import { useStore } from "@/hooks";
 
 const HomeScreen = () => {
@@ -17,10 +20,27 @@ const HomeScreen = () => {
   //     await usersInstance.getSong(96);
   //   })();
   // }, []);
+
+  const getUserInfo = async () => {
+    const token = await getStorage("token");
+    const cookie = await getStorage("cookie");
+    const profile = await getStorage("userinfo");
+
+    console.log("token&cookie&profile", token, profile, cookie);
+  };
+
   return (
-    <View>
+    <SafeAreaView>
       <Text>HomeScreen</Text>
-    </View>
+
+      <Button
+        type="primary"
+        onPress={() => {
+          getUserInfo();
+        }}>
+        获取存储数据
+      </Button>
+    </SafeAreaView>
   );
 };
 

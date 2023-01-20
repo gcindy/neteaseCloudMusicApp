@@ -5,7 +5,7 @@
  * @Date: 2023-01-17 17:34:35
  * @LastEditTime: 2023-01-20 20:42:40
  */
-import { request } from "../../services";
+import { request } from "@/services/http";
 
 export default class UserApi {
   /**

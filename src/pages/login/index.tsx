@@ -5,6 +5,7 @@ import { Button, InputItem, Toast } from "@ant-design/react-native";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../hooks";
 import { mineStyle } from "../../styles";
+import { setStorage } from "@/utils/storage";
 import { Navigation } from "@/utils/navigation";
 
 const LoginScreen = () => {
@@ -42,38 +43,39 @@ const LoginScreen = () => {
       timer = setTimeout(countdown, 1000);
     }
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timing]);
 
   // 用户登录
   const goLogin = async () => {
     const res: any = await usersInstance.login({ phone, captcha });
-    console.log("login_res=====>>>", res);
-    if (res.data.code == 200) {
-      // Navigation.navigate("mine");
+    await setStorage("cookie", res.cookie && res.cookie);
+    await setStorage("token", res.token && res.token);
+    await setStorage("userinfo", JSON.stringify(res.profile));
+
+    if (res.code == 200) {
+      Navigation.back();
     }
   };
 
   // 获取音乐列表
-  const getSongList = async () => {
-    const song_result = await usersInstance.getSong(96);
-    console.log("song_result=====>>>", song_result);
-  };
+  // const getSongList = async () => {
+  //   const song_result = await usersInstance.getSong(96);
+  //   console.log("song_result=====>>>", song_result);
+  // };
 
   // 获取验证码
   const getCaptcha = async () => {
-    console.log("getCaptcha=====>>>");
     const res: GlobalInstance.responseType<result> = (await usersInstance.getCaptcha(
       phone,
     )) as GlobalInstance.responseType<result>;
-
     if (res.data) Toast.success("发送成功");
   };
 
   // 校验验证码
   const checkVerificationCode = async () => {
-    getSongList();
+    // getSongList();
     console.log("hahahah=====>>>");
-    return;
     const res: GlobalInstance.responseType<result> = (await usersInstance.getCheckCaptcha(
       phone,
       captcha,
