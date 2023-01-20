@@ -3,10 +3,9 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-19 22:19:28
- * @LastEditTime: 2023-01-20 19:53:05
+ * @LastEditTime: 2023-01-20 20:53:27
  */
 import axios, { AxiosError, AxiosResponse, AxiosRequestConfig } from "axios";
-import { useStore } from "../hooks";
 import { Toast } from "@ant-design/react-native";
 import { DOMAIN_URL } from "./domain";
 import { rootStore } from "@/stores";
@@ -18,8 +17,6 @@ interface AxiosRequestConfigOpt extends AxiosRequestConfig {
 interface AxiosResponseOpt extends AxiosResponse {
   options?: GlobalInstance.showOptions;
 }
-
-const { usersInstance } = useStore();
 
 // 设置默认属性
 const service = axios.create({
@@ -59,8 +56,7 @@ service.interceptors.response.use(
     if (response.status == 200) {
       return response;
     } else {
-      rootStore.loadingInstance.showLoading(false);
-      return response.data;
+      return response;
     }
   },
   (err: any) => {

@@ -47,10 +47,10 @@ const LoginScreen = () => {
   // 用户登录
   const goLogin = async () => {
     const res: any = await usersInstance.login({ phone, captcha });
-    console.log("res=====>>>", res);
-    // if (res.data.code == 200) {
-    //   // Navigation.navigate("mine");
-    // }
+    console.log("login_res=====>>>", res);
+    if (res.data.code == 200) {
+      // Navigation.navigate("mine");
+    }
   };
 
   // 获取音乐列表
@@ -61,6 +61,7 @@ const LoginScreen = () => {
 
   // 获取验证码
   const getCaptcha = async () => {
+    console.log("getCaptcha=====>>>");
     const res: GlobalInstance.responseType<result> = (await usersInstance.getCaptcha(
       phone,
     )) as GlobalInstance.responseType<result>;
@@ -70,8 +71,9 @@ const LoginScreen = () => {
 
   // 校验验证码
   const checkVerificationCode = async () => {
-    // getSongList();
-
+    getSongList();
+    console.log("hahahah=====>>>");
+    return;
     const res: GlobalInstance.responseType<result> = (await usersInstance.getCheckCaptcha(
       phone,
       captcha,
