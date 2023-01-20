@@ -3,12 +3,10 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-17 17:13:47
- * @LastEditTime: 2023-01-18 10:56:53
+ * @LastEditTime: 2023-01-19 22:26:04
  */
 import { StyleSheet } from "react-native";
 import { px2dp, width, height } from "../../utils/px2dp";
-// import { commonStyle } from "../common";
-// import { globalStyle } from "../global";
 
 export const mineStyle = StyleSheet.create({
   mineWrapper: {
@@ -16,6 +14,7 @@ export const mineStyle = StyleSheet.create({
     height,
     backgroundColor: "#C83D3C",
   },
+
   loginWrapper: {
     width,
     height,
@@ -24,6 +23,7 @@ export const mineStyle = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   loginTitle: {
     color: "#f3f3f3",
     fontSize: px2dp(25),
@@ -31,6 +31,10 @@ export const mineStyle = StyleSheet.create({
     position: "absolute",
     top: "30%",
     left: "40%",
+  },
+
+  loginText: {
+    color: "#f2f2f2",
   },
 
   button: {

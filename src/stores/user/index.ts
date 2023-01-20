@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-16 16:53:25
- * @LastEditTime: 2023-01-18 16:54:43
+ * @LastEditTime: 2023-01-20 17:59:07
  */
 
 import { makeAutoObservable, observable, toJS } from "mobx";
@@ -38,10 +38,22 @@ export class UsersStore {
 
   // 登录
   async login(data: { phone: string; captcha: string }) {
-    const loginRes: any = await usersRequest.loginByPassword(data);
+    const loginRes: any = await usersRequest.loginByCaptcha(data);
+    // await setStorage("userInfo", JSON.stringify(loginRes.data));
+    // await setStorage("token", loginRes.data.token);
     console.log("loginRes=====>>>", loginRes);
-    this.login_result = loginRes;
-    // setStorage("userInfo", JSON.stringify(loginRes.data));
+    this.login_result = loginRes.data;
+    return loginRes.data;
+  }
+
+  // 获取验证码
+  async getCaptcha(phone: string) {
+    return await usersRequest.getCaptchaNumber(phone);
+  }
+
+  // 获取校验验证码
+  async getCheckCaptcha(phone: string, captcha: string) {
+    return await usersRequest.checkCode(phone, captcha);
   }
 
   async getSong(type?: number) {

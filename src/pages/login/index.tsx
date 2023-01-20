@@ -5,6 +5,7 @@ import { Button, InputItem, Toast } from "@ant-design/react-native";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../../hooks";
 import { mineStyle } from "../../styles";
+import { Navigation } from "@/utils/navigation";
 
 const LoginScreen = () => {
   const { usersInstance } = useStore();
@@ -16,9 +17,13 @@ const LoginScreen = () => {
   const [phone, setPhone] = useState<string>("13666683140");
   const [captcha, setCaptcha] = useState<string>("");
 
+  type result = {
+    code: number;
+    data: boolean;
+  };
+
   useEffect(() => {
     let timer: any;
-
     const countdown = () => {
       setSecond(preSecond => {
         if (preSecond <= 1) {
@@ -33,28 +38,49 @@ const LoginScreen = () => {
     };
     // 开始倒计时
     if (timing) {
+      getCaptcha();
       timer = setTimeout(countdown, 1000);
     }
     return () => clearTimeout(timer);
   }, [timing]);
 
+  // 用户登录
   const goLogin = async () => {
-    if (!phone) {
-      Toast.info("请输入账号");
-      return false;
-    }
-    if (!captcha) {
-      Toast.info("请输入验证码");
-      return false;
-    }
-
     const res: any = await usersInstance.login({ phone, captcha });
+    console.log("res=====>>>", res);
+    // if (res.data.code == 200) {
+    //   // Navigation.navigate("mine");
+    // }
+  };
 
-    if (res.code == 200) {
-      console.log("res", res);
+  // 获取音乐列表
+  const getSongList = async () => {
+    const song_result = await usersInstance.getSong(96);
+    console.log("song_result=====>>>", song_result);
+  };
+
+  // 获取验证码
+  const getCaptcha = async () => {
+    const res: GlobalInstance.responseType<result> = (await usersInstance.getCaptcha(
+      phone,
+    )) as GlobalInstance.responseType<result>;
+
+    if (res.data) Toast.success("发送成功");
+  };
+
+  // 校验验证码
+  const checkVerificationCode = async () => {
+    // getSongList();
+
+    const res: GlobalInstance.responseType<result> = (await usersInstance.getCheckCaptcha(
+      phone,
+      captcha,
+    )) as GlobalInstance.responseType<result>;
+
+    if (res.data) {
+      goLogin();
     } else {
-      console.log("msg=====>>>", res.msg);
-      Toast.info(res.msg);
+      Toast.fail("验证码错误，请确认后重新输入");
     }
   };
 
@@ -68,23 +94,27 @@ const LoginScreen = () => {
         <Text style={mineStyle.loginTitle}>登录</Text>
         <View style={mineStyle.loginWrapper}>
           <InputItem
-            error
+            style={mineStyle.loginText}
             type="phone"
             value={phone}
             placeholder="请输入用户名"
             placeholderTextColor="#f2f2f2"
             onChange={(value: any) => {
-              setPhone(value);
+              setPhone(value.replace(/\s*/g, ""));
             }}
           />
 
           <InputItem
+            style={mineStyle.loginText}
             type="password"
             value={captcha}
-            placeholder="请输入密码"
+            placeholder="请输验证码"
             placeholderTextColor="#f2f2f2"
             extra={
-              <Pressable onPress={() => setTiming(true)}>
+              <Pressable
+                onPress={() => {
+                  !timing ? setTiming(true) : Toast.info(`请在${COUNTDOWN_SECONDS}秒后重新获取验证码`);
+                }}>
                 <View>
                   <Text> {timing ? `${second}s后重新发送验证码` : "发送验证码"}</Text>
                 </View>
@@ -95,7 +125,7 @@ const LoginScreen = () => {
             }}
           />
 
-          <Button type="primary" style={mineStyle.button} onPress={() => goLogin()}>
+          <Button type="primary" style={mineStyle.button} onPress={() => checkVerificationCode()}>
             登录
           </Button>
         </View>
