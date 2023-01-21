@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-16 16:53:25
- * @LastEditTime: 2023-01-20 20:48:29
+ * @LastEditTime: 2023-01-21 16:03:16
  */
 
 import { makeAutoObservable, observable, toJS } from "mobx";
@@ -24,6 +24,7 @@ const DEFAULT_LOGIN_RESULT_DATA = {
 
 export class UsersStore {
   login_result: any = DEFAULT_LOGIN_RESULT_DATA;
+  play_list_result: any;
 
   constructor() {
     makeAutoObservable(this, {
@@ -39,7 +40,6 @@ export class UsersStore {
   // 登录
   async login(data: { phone: string; captcha: string }) {
     const loginRes: any = await usersRequest.loginByCaptcha(data);
-    console.log("loginRes=====>>>", loginRes);
     this.login_result = loginRes;
     return loginRes;
   }
@@ -54,6 +54,14 @@ export class UsersStore {
     return await usersRequest.checkCode(phone, captcha);
   }
 
+  // 获取用户创建歌单
+  async getUserPlaylist(uid: number) {
+    const res: any = await usersRequest.getUserPlaylist(uid);
+    console.log("res=====>>>", res);
+    this.play_list_result = res;
+    return res;
+  }
+
   async getSong(type?: number) {
     const res = await usersRequest.getSongs(type);
     return res;
@@ -65,5 +73,10 @@ export class UsersStore {
    */
   get_login_result_state() {
     return toJS(this.login_result);
+  }
+
+  get_play_list_result_state() {
+    console.log("hahahah=====>>>", this.play_list_result);
+    return toJS(this.play_list_result);
   }
 }

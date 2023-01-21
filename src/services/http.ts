@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-20 07:34:46
- * @LastEditTime: 2023-01-20 21:43:15
+ * @LastEditTime: 2023-01-21 16:03:11
  */
 import { Toast } from "@ant-design/react-native";
 import { Method } from "axios";
@@ -25,8 +25,8 @@ export const request = (url: string, method: Method, data?: object) => {
       [body]: data == null ? "" : data,
     })
       .then(response => {
-        console.log("response=====>>>", response.data.message);
-        rootStore.loadingInstance.set_loading_code(response.status);
+        console.log("response=====>>>", response.data, response.data.message);
+        // rootStore.loadingInstance.set_loading_code(response.status);
         const code = response.data.code;
         if (code === 200) {
           resolve(response.data);
