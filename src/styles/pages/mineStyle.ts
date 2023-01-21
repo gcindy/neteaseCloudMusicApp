@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-17 17:13:47
- * @LastEditTime: 2023-01-21 16:51:21
+ * @LastEditTime: 2023-01-21 17:12:12
  */
 import { StyleSheet } from "react-native";
 import { px2dp, width, height } from "../../utils/px2dp";
@@ -51,6 +51,25 @@ export const mineStyle = StyleSheet.create({
   userInfoText: {
     color: "#8c8d8d",
     marginRight: px2dp(24),
+  },
+
+  musicTypeBox: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  musicType: {
+    color: "#8c8d8d",
+    marginRight: px2dp(20),
+    marginBottom: px2dp(20),
+  },
+
+  musicTypeActive: {
+    color: "#333",
+    borderBottomColor: "#C83D3C",
+    borderBottomWidth: px2dp(2),
   },
 
   musicBox: {
