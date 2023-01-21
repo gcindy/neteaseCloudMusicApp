@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-17 17:13:47
- * @LastEditTime: 2023-01-19 22:26:04
+ * @LastEditTime: 2023-01-21 12:13:44
  */
 import { StyleSheet } from "react-native";
 import { px2dp, width, height } from "../../utils/px2dp";
@@ -14,7 +14,46 @@ export const mineStyle = StyleSheet.create({
     height,
     backgroundColor: "#C83D3C",
   },
+  /// 我的
+  mineBox: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fff",
+    marginHorizontal: px2dp(27),
+    paddingTop: px2dp(24),
+    paddingBottom: px2dp(19),
+    borderRadius: px2dp(10),
+    marginBottom: px2dp(54),
+  },
 
+  avatarImg: {
+    width: px2dp(70),
+    height: px2dp(70),
+    borderRadius: px2dp(50),
+  },
+
+  nickname: {
+    fontWeight: "bold",
+    marginVertical: px2dp(10),
+    fontSize: px2dp(20),
+    textAlign: "left",
+  },
+
+  userinfo: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  userInfoText: {
+    color: "#8c8d8d",
+    marginRight: px2dp(24),
+  },
+
+  /// 登录
   loginWrapper: {
     width,
     height,

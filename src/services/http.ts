@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-20 07:34:46
- * @LastEditTime: 2023-01-20 20:55:13
+ * @LastEditTime: 2023-01-20 21:43:15
  */
 import { Toast } from "@ant-design/react-native";
 import { Method } from "axios";
@@ -22,7 +22,7 @@ export const request = (url: string, method: Method, data?: object) => {
     service({
       url: requestUrl,
       method,
-      [body]: !data ? "" : data,
+      [body]: data == null ? "" : data,
     })
       .then(response => {
         console.log("response=====>>>", response.data.message);
@@ -38,6 +38,13 @@ export const request = (url: string, method: Method, data?: object) => {
       .catch((err: any) => {
         console.log("err=====>>>", err.data);
         Toast.fail(`服务器错误信息：${err.data.message}`);
+        // 网络错误
+        if (err.code == "ERR_NETWORK") {
+          console.log("ERR_NETWORK==>err", err);
+          rootStore.loadingInstance.set_loading_code(err.code);
+          rootStore.loadingInstance.showLoading(false);
+          reject(err);
+        }
       });
   });
 };
