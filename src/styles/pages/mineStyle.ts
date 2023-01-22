@@ -3,7 +3,7 @@
  * @Author: 苏小妍
  * @LastEditors: 苏小妍
  * @Date: 2023-01-17 17:13:47
- * @LastEditTime: 2023-01-21 17:12:12
+ * @LastEditTime: 2023-01-22 18:31:43
  */
 import { StyleSheet } from "react-native";
 import { px2dp, width, height } from "../../utils/px2dp";
@@ -86,6 +86,7 @@ export const mineStyle = StyleSheet.create({
     height: px2dp(47),
     marginRight: px2dp(8),
     borderRadius: px2dp(5),
+    overflow: "hidden",
   },
 
   musicTitleBox: {
@@ -96,6 +97,7 @@ export const mineStyle = StyleSheet.create({
 
   musicTitle: {
     marginBottom: px2dp(12),
+    width: px2dp(224),
   },
 
   trackCount: {
